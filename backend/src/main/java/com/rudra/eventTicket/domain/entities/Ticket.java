@@ -1,4 +1,4 @@
-package com.rudra.eventTicket.domain;
+package com.rudra.eventTicket.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

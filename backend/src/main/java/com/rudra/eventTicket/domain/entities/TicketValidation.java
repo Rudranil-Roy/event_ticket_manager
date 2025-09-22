@@ -1,4 +1,4 @@
-package com.rudra.eventTicket.domain;
+package com.rudra.eventTicket.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,28 +10,25 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "qr_codes")
-@Setter
+@Table(name = "ticket_validations")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class QrCode {
+public class TicketValidation {
 
     @Id
     @Column(name = "id", nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name = "status",  nullable = false)
+    @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
-    private QrCodeStatusEnum status;
-
-    @Column(name = "value", nullable = false)
-    private String value;
+    private TicketStatusEnum status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ticket_id")
+    @JoinColumn(name = "user_id")
     private Ticket ticket;
 
     @CreatedDate
@@ -45,12 +42,12 @@ public class QrCode {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        QrCode qrCode = (QrCode) o;
-        return Objects.equals(id, qrCode.id) && status == qrCode.status && Objects.equals(value, qrCode.value) && Objects.equals(createdAt, qrCode.createdAt) && Objects.equals(updatedAt, qrCode.updatedAt);
+        TicketValidation that = (TicketValidation) o;
+        return Objects.equals(id, that.id) && status == that.status && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, value, createdAt, updatedAt);
+        return Objects.hash(id, status, createdAt, updatedAt);
     }
 }

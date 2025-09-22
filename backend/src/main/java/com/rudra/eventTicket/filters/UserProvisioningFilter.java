@@ -1,6 +1,6 @@
 package com.rudra.eventTicket.filters;
 
-import com.rudra.eventTicket.domain.User;
+import com.rudra.eventTicket.domain.entities.User;
 import com.rudra.eventTicket.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

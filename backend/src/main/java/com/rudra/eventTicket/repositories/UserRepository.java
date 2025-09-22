@@ -1,6 +1,6 @@
 package com.rudra.eventTicket.repositories;
 
-import com.rudra.eventTicket.domain.User;
+import com.rudra.eventTicket.domain.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
