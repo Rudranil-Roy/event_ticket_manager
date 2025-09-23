@@ -7,5 +7,5 @@ import java.util.UUID;
 
 public interface EventService {
 
-    Event createEvent(UUID organizerID, CreateEventRequest createEventRequest);
+    Event createEvent(UUID organizerID, CreateEventRequest event);
 }
