@@ -45,8 +45,8 @@ public class EventServiceImpl implements EventService {
         eventToBeCreated.setVenue(event.getVenue());
         eventToBeCreated.setSalesStart(event.getSalesStart());
         eventToBeCreated.setSalesEnd(event.getSalesEnd());
-        eventToBeCreated.setStartTime(event.getStartTime());
-        eventToBeCreated.setEndTime(event.getEndTime());
+        eventToBeCreated.setStart(event.getStartTime());
+        eventToBeCreated.setEnd(event.getEndTime());
         eventToBeCreated.setStatus(event.getStatus());
         eventToBeCreated.setTicketTypes(ticketTypes);
 
